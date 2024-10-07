@@ -13,16 +13,16 @@ from threading import Thread
 
 loop = asyncio.get_event_loop()
 
-TOKEN = '7900075083:AAHZ5Mt82d9IQ8YKK-E3E8s5cGomjwaZPFU'
+TOKEN = '7853443557:AAEqG6IFbRF7pEdoKrEjmLM_UJ7GPTHEiBo'
 MONGO_URI = 'mongodb+srv://Bishal:Bishal@bishal.dffybpx.mongodb.net/?retryWrites=true&w=majority&appName=Bishal'
-FORWARD_CHANNEL_ID = -10012179219444
-CHANNEL_ID = -10012179219444
-error_channel_id = -10012179219444
+FORWARD_CHANNEL_ID = -1002162993601
+CHANNEL_ID = -1002162993601
+error_channel_id = -1002162993601
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-db = client['zoya']
+db = client['ninja']
 users_collection = db.users
 
 bot = telebot.TeleBot(TOKEN)
@@ -195,7 +195,7 @@ def handle_message(message):
         bot.reply_to(message, "*Instant++ Plan selected*", parse_mode='Markdown')
         attack_command(message)
     elif message.text == "Canary Download✔️":
-        bot.send_message(message.chat.id, "*Please use the following link for Canary Download: https://t.me/HackingworldCheats/2990*", parse_mode='Markdown')
+        bot.send_message(message.chat.id, "*Please use the following link for Canary Download: https://t.me/ninjaddoshacks*", parse_mode='Markdown')
     elif message.text == "My Account🏦":
         user_id = message.from_user.id
         user_data = users_collection.find_one({"user_id": user_id})
@@ -212,9 +212,9 @@ def handle_message(message):
             response = "*No account information found. Please contact the administrator.*"
         bot.reply_to(message, response, parse_mode='Markdown')
     elif message.text == "Help❓":
-        bot.reply_to(message, "*Help selected*", parse_mode='Markdown')
+        bot.reply_to(message, "*Help selected @NINJAGAMEROP*", parse_mode='Markdown')
     elif message.text == "Contact admin✔️":
-        bot.reply_to(message, "*Contact admin selected*", parse_mode='Markdown')
+        bot.reply_to(message, "*Contact admin selected @NINJAGAMEROP*", parse_mode='Markdown')
     else:
         bot.reply_to(message, "*Invalid option*", parse_mode='Markdown')
 
